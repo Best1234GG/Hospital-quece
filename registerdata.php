@@ -2,11 +2,11 @@
     $open_connet = 1;
     require('connect.php');
     if(isset($_POST['user']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['passwordagain'])){
-        $username = htmlspecialchars(mysqli_real_escape_string($conn, $_POST['user']));
+        $user = htmlspecialchars(mysqli_real_escape_string($conn, $_POST['user']));
         $email = htmlspecialchars(mysqli_real_escape_string($conn, $_POST['email']));
         $password1 = htmlspecialchars(mysqli_real_escape_string($conn, $_POST['password']));
         $password2 = htmlspecialchars(mysqli_real_escape_string($conn, $_POST['passwordagain']));
-        if (empty($username)){
+        if (empty($user)){
             die(header('Location: register.php'));
         }elseif(empty($email)){
             die(header('Location: register.php'));
