@@ -13,7 +13,7 @@
             $result = mysqli_fetch_assoc($call_check);
             $hash = $result['password'];
             $password = $password . $result['salt'];
-            $conut = $result['login_error'];
+            $count = $result['login_error'];
             $ban = $result['ban'];
             if($result['lock'] == 1){
                 echo '<h1>บัญชีถูกระงับชั่วคราว(Account has been temporarily suspended.)</h1>';
@@ -33,7 +33,7 @@
                     die(header('Location: admin.php'));
                 }
             }else{
-                $query_login_count =  "UPDATE account SET login_error + 1 WHERE email = '$email'";
+                $query_login_count =  "UPDATE account SET login_error = login_error + 1 WHERE email = '$email'";
                 $call_login_error = mysqli_query($conn, $query_login_count);
                 if ($result['login_error'] + 1 >= $count_error){
                     $ban_account = "UPDATE account SET lock = 1, ban = DATE_ADD(NOW(), INTERVAL $time MINUTE) WHERE email = '$email'";
