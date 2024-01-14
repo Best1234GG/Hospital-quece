@@ -51,11 +51,11 @@
         <h1 class="h3 mb-3 fw-normal">Login</h1>
 
         <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" fdprocessedid="oksp5" required>
+        <input name = "email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" fdprocessedid="oksp5" required>
         <label for="floatingInput">Email address</label>
         </div>
         <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" fdprocessedid="12kn6" required>
+        <input name = "password" type="password" class="form-control" id="floatingPassword" placeholder="Password" fdprocessedid="12kn6" required>
         <label for="floatingPassword">Password</label>
         </div>
 
