@@ -7,17 +7,17 @@
         $password1 = htmlspecialchars(mysqli_real_escape_string($conn, $_POST['password']));
         $password2 = htmlspecialchars(mysqli_real_escape_string($conn, $_POST['passwordagain']));
         if (empty($username)){
-            die(header('Location: register'));
+            die(header('Location: register.php'));
         }elseif(empty($email)){
-            die(header('Location: register'));
+            die(header('Location: register.php'));
         }
         elseif(empty($password1)){
-            die(header('Location: register'));
+            die(header('Location: register.php'));
         }
         elseif(empty($password2)){
-            die(header('Location: register'));
+            die(header('Location: register.php'));
         }else if ($password1 != $password2){
-            die(header('Location: register'));
+            die(header('Location: register.php'));
         }else{
             $check_email = "SELECT email FROM account WHERE email = '$email'";
             $check_call = mysqli_query($conn, $check_email);
