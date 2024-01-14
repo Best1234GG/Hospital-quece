@@ -2,11 +2,11 @@
     $open_connet = 1;
     require('connect.php');
     if(isset($_POST['user']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['passwordagain'])){
-        $user = htmlspecialchars(mysqli_real_escape_string($conn, $_POST['user']));
+        $username_account = htmlspecialchars(mysqli_real_escape_string($conn, $_POST['user']));
         $email = htmlspecialchars(mysqli_real_escape_string($conn, $_POST['email']));
         $password1 = htmlspecialchars(mysqli_real_escape_string($conn, $_POST['password']));
         $password2 = htmlspecialchars(mysqli_real_escape_string($conn, $_POST['passwordagain']));
-        if (empty($user)){
+        if (empty($username_account)){
             die(header('Location: register.php'));
         }elseif(empty($email)){
             die(header('Location: register.php'));
@@ -36,7 +36,7 @@
                 $password = password_hash($password1, $algo, $options);
                 $crate_account = "INSERT INTO account VALUE (
                 '',
-                '$user',
+                '$username_account',
                 '$email',
                 '$password',
                 '$salt',
